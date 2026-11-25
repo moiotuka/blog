@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      border: 0;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 5px 24px;
+      background-color: #b2c0d7;
+      color: #24211e;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      text-align: center;
+          font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    h3{
+        font-size:16px;
+
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 3px;
+      background: #ddd;
+      cursor: zoom-in;
+    }
+
+    #lightbox {
+      max-width: 90vw;
+      max-height: 90vh;
+      padding: 12px;
+      border: none;
+      background: #222;
+    }
+
+    #lightbox::backdrop {
+      background: rgb(0 0 0 / 80%);
+    }
+
+    #lightbox img {
+      display: block;
+      max-width: 85vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      margin: auto;
+    }
+
+    #closeLightbox {
+      display: block;
+      margin: 0 0 8px auto;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 28px 16px;
+      }
+
+      .gallery {
+        gap: 10px;
+      }
+    }
+    #lightbox {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 48px 56px;
+  border: none;
+  background: #222;
+}
+
+#lightbox img {
+  display: block;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+#closeLightbox,
+#previousImage,
+#nextImage {
+  position: absolute;
+  border: 0;
+  padding: 8px 12px;
+  background: white;
+  color: #222;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#closeLightbox {
+  top: 8px;
+  right: 8px;
+}
+
+#previousImage {
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+}
+
+#nextImage {
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+} 
+nav {
+
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background-color: #fffd8a;
+      color: #233d6b;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #52627a;
+      color: white;
+    }
+
+  </style>
+</head>
+<h3>Cròniques d'una Jubilada Neurodivergent</h3>
+<nav>
+  <a href="index.html">Blog</a>
+  <a href="tattoo.html">Tattoo</a>
+  <a href="art.html">Art</a>
+  <a href="blasting.html">Shit I'm Blasting</a>
+</nav>
+<body>
+  <main>
+    <h1>Art</h1>
+
+    <section class="gallery" aria-label="Picture gallery">
+      <img src="images/tobeposted.png" alt="Artwork to be posted">
+      <img src="images/tobeposted.png" alt="Artwork to be posted">
+      <img src="images/tobeposted.png" alt="Artwork to be posted">
+      <img src="images/tobeposted.png" alt="Artwork to be posted">
+      <img src="images/tobeposted.png" alt="Artwork to be posted">
+      <img src="images/tobeposted.png" alt="Artwork to be posted">
+    </section>
+  </main>
+
+ <dialog id="lightbox">
+  <button id="closeLightbox" aria-label="Close image">×</button>
+  <button id="previousImage" aria-label="Previous image">‹</button>
+  <img id="lightboxImage" src="" alt="">
+  <button id="nextImage" aria-label="Next image">›</button>
+</dialog>
+
+
+ <script>
+  const images = [...document.querySelectorAll(".gallery img")];
+  const lightbox = document.querySelector("#lightbox");
+  const lightboxImage = document.querySelector("#lightboxImage");
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = (index + images.length) % images.length;
+    lightboxImage.src = images[currentIndex].src;
+    lightboxImage.alt = images[currentIndex].alt;
+  }
+
+  images.forEach((image, index) => {
+    image.addEventListener("click", () => {
+      showImage(index);
+      lightbox.showModal();
+    });
+  });
+
+  document.querySelector("#closeLightbox").addEventListener("click", () => {
+    lightbox.close();
+  });
+
+  document.querySelector("#previousImage").addEventListener("click", () => {
+    showImage(currentIndex - 1);
+  });
+
+  document.querySelector("#nextImage").addEventListener("click", () => {
+    showImage(currentIndex + 1);
+  });
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      lightbox.close();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.open) return;
+
+    if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (event.key === "ArrowRight") showImage(currentIndex + 1);
+  });
+</script>
+
+</body>
+</html>
+```

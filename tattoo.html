@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      border: 0;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 5px 24px;
+      background-color: #b2c0d7;
+      color: #24211e;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 2000px;
+      margin: 0 auto 28px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background-color: #fffd8a;
+      color: #233d6b;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #52627a;
+      color: white;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      grid-column: 1 / -1;
+      margin: 0 0 5px;
+      text-align: center;
+     font-size: 50px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+ h3{
+        font-size:16px;
+
+    }
+    .design-section {
+      min-width: 0;
+      border-right: 3px solid #52627a;
+      padding-right: 18px;
+    }
+
+    .design-section:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+    .design-section h2 {
+      margin: 0 0 16px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 3px;
+      background: white;
+      cursor: zoom-in;
+    }
+
+    #lightbox {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      padding: 48px 56px;
+      border: none;
+      background: #222;
+    }
+
+    #lightbox::backdrop {
+      background: rgb(0 0 0 / 80%);
+    }
+
+    #lightbox img {
+      display: block;
+      max-width: 75vw;
+      max-height: 75vh;
+      width: auto;
+      height: auto;
+      margin: auto;
+    }
+
+    #closeLightbox,
+    #previousImage,
+    #nextImage {
+      position: absolute;
+      border: 0;
+      padding: 8px 12px;
+      background: white;
+      color: #222;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    #closeLightbox {
+      top: 8px;
+      right: 8px;
+    }
+
+    #previousImage {
+      top: 50%;
+      left: 8px;
+      transform: translateY(-50%);
+    }
+
+    #nextImage {
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 28px 16px;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        grid-column: 1;
+      }
+       h3{
+        font-size:16px;
+
+    }
+
+      .design-section {
+        border-right: 0;
+        border-bottom: 3px solid #52627a;
+        padding: 0 0 28px;
+        margin-bottom: 10px;
+      }
+
+      .design-section:last-child {
+        border-bottom: 0;
+      }
+
+      .gallery {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Cròniques d'una Jubilada Neurodivergent</h3>
+  <nav>
+    <a href="index.html">Blog</a>
+    <a href="tattoo.html">Tattoo</a>
+    <a href="art.html">Art</a>
+    <a href="blasting.html">Shit I'm Blasting</a>
+  </nav>
+
+  <main>
+    <h1>Tattoo</h1>
+
+    <section class="design-section">
+      <h2>Ornamental Designs</h2>
+      <div class="gallery" aria-label="Ornamental designs">
+        <img src="images/ornamental1.png" alt="Ornamental design 1">
+        <img src="images/ornamental2.png" alt="Ornamental design 2">
+        <img src="images/tobeposted.png" alt="Ornamental design 3">
+        <img src="images/tobeposted.png" alt="Ornamental design 4">
+        <img src="images/tobeposted.png" alt="Ornamental design 5">
+        <img src="images/tobeposted.png" alt="Ornamental design 6">
+      </div>
+    </section>
+
+    <section class="design-section">
+      <h2>Ignorant Designs</h2>
+      <div class="gallery" aria-label="Ignorant designs">
+        <img src="images/tobeposted.png" alt="Ignorant design 1">
+        <img src="images/tobeposted.png" alt="Ignorant design 2">
+        <img src="images/tobeposted.png" alt="Ignorant design 3">
+        <img src="images/tobeposted.png" alt="Ignorant design 4">
+        <img src="images/tobeposted.png" alt="Ignorant design 5">
+        <img src="images/tobeposted.png" alt="Ignorant design 6">
+      </div>
+    </section>
+
+    <section class="design-section">
+      <h2>Others</h2>
+      <div class="gallery" aria-label="Other designs">
+        <img src="images/tobeposted.png" alt="Other design 1">
+        <img src="images/tobeposted.png" alt="Other design 2">
+        <img src="images/tobeposted.png" alt="Other design 3">
+        <img src="images/tobeposted.png" alt="Other design 4">
+        <img src="images/tobeposted.png" alt="Other design 5">
+        <img src="images/tobeposted.png" alt="Other design 6">
+      </div>
+    </section>
+  </main>
+
+  <dialog id="lightbox">
+    <button id="closeLightbox" aria-label="Close image">×</button>
+    <button id="previousImage" aria-label="Previous image">‹</button>
+    <img id="lightboxImage" src="" alt="">
+    <button id="nextImage" aria-label="Next image">›</button>
+  </dialog>
+
+  <script>
+    const images = [...document.querySelectorAll(".gallery img")];
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxImage = document.querySelector("#lightboxImage");
+    let currentIndex = 0;
+
+    function showImage(index) {
+      currentIndex = (index + images.length) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+      lightboxImage.alt = images[currentIndex].alt;
+    }
+
+    images.forEach((image, index) => {
+      image.addEventListener("click", () => {
+        showImage(index);
+        lightbox.showModal();
+      });
+    });
+
+    document.querySelector("#closeLightbox").addEventListener("click", () => {
+      lightbox.close();
+    });
+
+    document.querySelector("#previousImage").addEventListener("click", () => {
+      showImage(currentIndex - 1);
+    });
+
+    document.querySelector("#nextImage").addEventListener("click", () => {
+      showImage(currentIndex + 1);
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.close();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.open) return;
+      if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+      if (event.key === "ArrowRight") showImage(currentIndex + 1);
+    });
+  </script>
+</body>
+</html>

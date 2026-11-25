@@ -1,0 +1,574 @@
+
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>moiotuka</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #b2c0d7;
+      font-family: Cambria, Cochin, Georgia, Times, "arial", serif;
+      font-size: 18px;
+      text-align: justify;
+      padding: 5px 24px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    h2 {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-size: 23px;
+    }
+    h4{
+        font-size:18px;
+    }
+    #article1 {
+      background-color: #f3f2b688;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      padding: 19px;
+    }
+
+    #article2 {
+        background-color: #f3f2b688;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      padding: 19px;
+    }
+
+    #article3 {
+        background-color: #f3f2b688;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      padding: 19px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 700px);
+      gap: 24px;
+      align-items: start;
+      max-width: none;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .text,
+    .images {
+      min-width: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background-color: #fffd8a;
+      color: #233d6b;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #52627a;
+      color: white;
+    }
+
+    /* ASCII Layout Styles */
+    .ascii-wrapper {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    .ascii-art {
+      overflow-x: auto;
+      text-align: left;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .ascii-small {
+      font-size: 8px;
+      text-align: right;
+    }
+    
+    .ascii-small2 {
+      font-size: 8px;
+      text-align: left;
+    }
+
+    .dropdown-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .jump-menu {
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      background-color: #fffd8a;
+      color: #233d6b;
+      border: 1px solid #233d6b;
+      cursor: pointer;
+    }
+
+    .images img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .images figure {
+      margin: 0 0 16px;
+      text-align: center;
+      font-size: small;
+    }
+
+    .images figcaption {
+      margin-top: 8px;
+    }
+
+    .star-line {
+      font-size: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+      .ascii-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="columns">
+    <section class="text">
+      <h1>Cròniques d'una Jubilada Neurodivergent</h1>
+
+      <nav>
+        <a href="index.html">Blog</a>
+        <a href="tattoo.html">Tattoo</a>
+        <a href="art.html">Art</a>
+        <a href="blasting.html">Shit I'm Blasting</a>
+      </nav>
+
+      <h2>
+        Tinc 21 anys, molta mala hòstia i una curiositat inútil finançada per autisme,<br>
+        altes capacitats i tda.<br>
+        M'agraden els cefalòpodes, Pink Floyd, Lenin i els bolets.
+      </h2>
+
+      <p><strong><em>English and Catalan</em></strong></p>
+               
+      <div class="ascii-wrapper">
+        <pre class="ascii-art ascii-small">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀            ⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                  .
+                                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠀⠀⠀⠀⠀⠀⠀⣰⠤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠀⠀⠀⠀⠀⠀⠀⠙⠺⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                      ⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                      ⠀⠀⠀⣟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                       ⠀⠀⣼⠻⡄⠀⠀⠀⠀⠀⢐⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠚⠻⢧⣠⡼⠛⠂⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠀⠀⠘⡿⠀⠀⠀⠀⠀⠀⠀⠀⣾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠀⠀⠐⠟⠀⠀⠀⠀⠀⠀⠀⢀⡟⢽⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠞⠁⠀⠻⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                        ⠀⠀⠀⠀⠀⠀⠉⠛⠛⠷⢦⣄⠀⠀⢀⣤⠟⠛⠛⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣧⢠⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠇⠀⠀⠀ ⡀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⡧⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡏⣄⣀⡀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⣷⠉⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡯⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⢀⣠⡀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⠀⠀⠀ ⠹⠶⠗
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⡆⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠗⠿⣥⣀⣼⠷⠒⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </pre>
+
+        <pre class="ascii-art">
+                          ⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                         ⣼⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+       ⠀⠀⠀⠀⠀⠀⠀⠀⢤⣄⣀⣀⣀⣰⡇⠈⣧⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀ ⠀⠀⠀⠀⠀⠀⠈⠻⢦⡀⠀⠀⠀⠀⢀⣠⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⠃⠀⡀⠀⢿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      ⠀⠀⠀⠀⠀⣠⠔⠂⠀⠀⠀⢠⣏⣴⠞⠛⢦⣜⣧⠀ ⠀⠀⠢⣄⡀⠀⠀⠀⠀
+      ⠀⠀ ⣖⡿⡋⠀⠀⠀ ⠀⠾⠋⠀⠀⠀  ⠀⠉⠻⡄⠀⠀ ⠀⢝⢿⣱⣄⠀⠀
+      ⠀ ⣿⣨⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠲⣤⡀⠀⠀ ⠀ ⠀ ⠈⢳⣇⣿⢡⠀
+       ⣇⣟⣵⠃⠀⠀⠀⠀⠀⠀⢀⣴⣦⡤⠀⠀⠈⠻⣷⡀⠀ ⠀ ⠀  ⠈⣯⡻⢸
+      ⡆⣿⡾⡅⠀⠀⠀⠀⠀⢀⣴⣿⣿⣏⠀⠀⠀⠀⠀⠹⣿⡆⠀⠀   ⠀ ⢨⢻⣾⢱
+      ⣷⡘⣱⠇⠀⠀⠀⠀⠀⠀⠹⠋⠈⠻⣷⣄⠀⠀⠀⠀⣿⣿⠀⠀ ⠀  ⠀⠘⣧⢋⣾
+     .⡼⣷⡿⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣷⣄⠀⢀⣿⣿⠀⠀⠀  ⠀  ⢰⢻⣾⢇
+      ⢳⣌⠇⣿⠀⠀⠀⠀⠀⠀⣴⢶⣤⣀⡀⠀⠈⢻⣷⣾⣿⠏⠀  ⠀⠀ ⠀⣿⠸⣡⡞
+     ⠀⡿⢷⣿⡸⣄⠀⢀⣴⡾⠉⠀⠈⠛⠿⢿⣿⣿⡿⠿⣷⣄⠀⠀  ⢠⡇⣿⡾⢛⠀
+     ⠀⠘⢦⣝⡣⢿⡦⡈⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠋   ⢀⣴⡿⣘⣭⡶⠃⠀
+      ⠀⠀⠀⠹⣛⠿⠷⡹⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⢀⣴⢟⠾⠟⣛⠝⠀⠀⠀
+       ⠀⠀⠀⠀⠈⠛⡿⠿⠶⢛⣫⣤⡶⣒⡶⠶⣖⠶⣶⣍⣛⠚⠿⣟⠛⠁⠀⠀⠀⠀
+       ⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠋⢡⠞⠁⠀⠀⠈⠻⣮⠙⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀
+        </pre>
+         <pre class="ascii-art ascii-small2">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣰⠤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠙⠺⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣼⠻⡄⠀⠀⠀⠀⠀  ⠀⢐⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠚⠻⢧⣠⡼⠛⠂⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠘⡿⠀⠀⠀⠀⠀⠀ ⠀⠀⣾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠐⠟⠀⠀⠀⠀⠀⠀⠀⢀⡟⢽⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠞⠁⠀⠻⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠉⠛⠛⠷⢦⣄⠀⠀⢀⣤⠟⠛⠛⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣧⢠⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     ⠸⠇⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡧⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⡏⣄⣀⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⣷⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡯⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠀⠀⠀⠀⠀⠀⠹⠶⠗
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⡆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠗⠿⣥⣀⣼⠷⠒⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </pre>
+
+      </div>
+
+      <div class="dropdown-container">
+        <select class="jump-menu" onchange="location = this.value;">
+          <option value="">Jump to article</option>
+          <option value="#subject1">La cerca d'una alternativa</option> 
+          <option value="#subject2">11 de Novembre</option>
+          <option value="#subject3">Subject 3</option>
+        </select>
+      </div>
+
+      <p class="star-line">
+        &starf; &star; &star; &star; &starf; &starf; &starf; &star; &star;
+        &star; &starf; &starf; &starf; &star; &star; &star; &starf; &starf;
+        &starf; &star; &star; &star; &starf; &starf; &starf; &star; &star;
+        &star; &starf; &starf; &starf; &star; &star; &star; &starf; &starf;
+        &starf; &star; &star; &star; &starf; &starf;
+        &star; &star; &star; &star; &starf; &starf;
+        &starf; &star; &star; &star; &starf;
+      </p>
+
+      <p><em><strong><h4>&middot; Aqui sota podeu trobar les meves xapes. Esteu avisats. Per veure coses interessants, consulteu "Tattoo" o "Art".</em><br>&mdash; Salut<br></h4></strong> P.D. Tots els dibuixos de la dreta són autorretrats<br><br>
+        <strong><h4>&middot; Here below you can find my ramblings. You've been warned. For interesting stuff please refere to the sections "Tattoo" or "Art".<br>&mdash; Cheers</h4></strong></em>P.S. Every drawing from your right is a self portrait<br></p>
+
+  
+    <div id="article1"> 
+      <p id="subject1"><h2><strong>La cerca d’una alternativa: el boicot de Meta i apologia al blog personal de 2003</strong></h2>
+      <em> Una senyoreta a vegades ha de forçar la mà de la comoditat i descobrir el món que se’ns va arrabassar sense que ens n’adonéssim.</em>
+    <br><br>Després del meu èxode de les xarxes socials convencionals, el buit de la connexió tecnològica pesa al meu cor. No és pas que Instagram sigui un lloc 
+    particularment prolífic per connectar amb gent, però el miratge enganya una estona i ens convenç que sí. 
+    L’engany que mirant dues històries dels teus amics saps què és de la seva vida; parcialment, sí. <strong>Realment</strong> no. </p>
+    <p>I és per això que, amb la set nostàlgica de tenir un grapat d’anys i explorar blogs arcaics d’internet plens d’imatges en baixa resolució,
+       li dono una oportunitat a Substack. De moment és una mica estèril i poc personalitzable. No puc posar dues imatges independents
+       l’una al cantó de l’altre, bummer. <br><strong>Però és un inici en l’intent de transmetre informació per internet d’una manera més responsable</strong>,
+        més real, més <em>humana</em>. <br> El dia que es tornin famosos i facin una tecnocràcia ja m'enfadaré amb ells també 
+        i esborraré aquest blog entre declaracions dramàtiques. <em>Nota d'editora: com podeu veure això ja ha passat jeje. Prefereixo la meva web merdosa<br>
+       que un twitter de gent intensa</em></p>
+
+       <p><hr><strong><em>Oda al Newsletter</strong></em><br>
+
+<br><em>que en safata m’alegres el correu electrònic,<br>
+
+<br>espero el retorn al temps en què el més divertit d’un ordinador<br>
+
+<br>era obrir MS Paint;<br><br>
+
+<br>Temps de càrrega etern del Firefox;<br>
+
+<br>Tecnologia casolana arcaica.<br>
+
+<br>Crec en tu per fer-me sentir com una iaia que es rula powerponts<br>
+
+<br>i gifs purpurinosos amb les seves amigues de la tercera edat,<br>
+
+<br>quotes catalanetes catòliques,<br>
+<br> fotos dels seus nets fent la comunió.<br><br>
+
+<br>“The children yearn for the mines” i el monitor té<br>
+<br>dos altaveus petits <br>
+
+<br>connectats a part, mancança de sistema de so propi <br>
+<br>de la caixa gegant ventilada de la taula.<br><br>
+
+<br>Mai he sentit la paraula “fibra òptica”<br>
+<br> i algoritme em sona a matemàtiques.<br><br>
+
+<br>Oh newsletter, desitjo de tu<br>
+<br>la connexió en lírica oferida<br>
+
+<br>d’abans dels tics blaus verificats,<br>
+
+<br>d’abans de la postulació pública<br>
+
+<br>a l’èter pseudointergalàctic electrònic.<br><br>
+
+<br>Els blogs d’stickers i gifs, el cursor personalitzat,<br>
+
+<br>la pàgina interactiva merdosa;<br>
+
+<br>la ingenuitat de la prepubescència digital.</em><br><br><br>
+</p>
+<p><hr><h2><strong>Headin’ to wharever’s ahead</strong></h2><br>
+Hello to my English-speaking mates. I hope to mix Catalan stupidity with some well-deserved English stupidity as well.
+The plan is to post stuff I know I’m the one interested in. I do not entertain the thought in my mind of “<em>what will people like, be interested in, make them keep reading?</em>” 
+I honestly do not give a single fuck. <br><br><strong>I’m not a clown</strong>, not a scientific article site, not a telly show.<br>
+<strong><em>My job is not to keep people looking at a screen for the longest amount of time I can manage.</em></strong>
+There’s no job here. This is old school teenage fun before likes, followers, and reposts. <br>Honest conversations i would have alone in my head, propelled into the internet abyss.
+And that’s nice. And that’s honest communication, and the internet has been cleansed from it.<br><br>
+So grab on to your socks, you might be bored for some of it. Nothing bad with that.
+At the moment, I’m revisiting my old marine biology interest, so there’ll be some of that. 
+Tattoo talk, politics, psychiatry, mushrooms I find around <em>me home</em>, just an autistic special interest dump, really. I’ll have a blast, and you can come along for the ride.
+I truly appreciate anyone who manages to read a single full thing I post.<br> So grab the stimulant of your choice and prepare to hear me speak about octopuses for 20 minutes. 
+I promise you’ll learn something. There <strong>will</strong> be spelling mistakes.
+<br><br>Also you're invited to chat with me about anything I'm posting here so I don't spiral into psychosis! My email is <a href="mailto:juliacabarrocasberrio@gmail.com">juliacabarrocasberrio@gmail.com</a>. Please don't send me Whatsapp messages, I'll cry. <br>
+<br>
+Cheers
+<br><br>
+-júlia ☭ <br><br> 02/11/2026</p>
+
+</p>
+      
+    </div id="article1"><br> <br>
+
+    <div id="article2"> 
+
+      <p id="subject2"><h2><strong>11 de Novembre: La Nostra Desesperació i la seva Violència</strong></h2><br>
+      <em> Moments clau on veiem l’entramat de l’estat amb la patronal 
+        i la manipulació deliberada de la informació.</em><br><br>
+        Aquest 11 de novembre <strong>la primera vaga general en catorze anys</strong> ens recorda de què està fet
+       l’aparell de l’estat i a qui serveix. És en els moments de tensió, entropia i canvi on la boira quotidiana
+        ja no pot tapar <strong>la sang i odi que supura l’statu quo.</strong><br>
+
+        El dia 10 de novembre era a l’hospital d’Olot dinant a la cafeteria: a la televisió, un interminable discurs
+        retransmès per TV3: <br><br><br>
+       <em>Vaga de maquinistes, <strong> que enfadades estan les ciutadanes</strong>, que no poden agafar els seus trens
+        per culpa seva. Ostres, i Renfe i Adif que ho està passant <strong>tan malament</strong>, pobretes.
+         No saben pas on posar més busos extraordinaris, ja n’han posat 3! “<strong>Crisis de mobilitat</strong>”.<br><br>
+
+      Canvi de tema radical: Una parella, l’amor entre dues persones amb malalties degeneratives;
+       la Marató d’aquest any recull diners per malalties neurodegeneratives i neuromusculars.
+
+    Els manifestants del sector metal·lúrgic intervenen carreteres i el port de Tarragona; La policia <strong>els ha</strong> de desallotjar.
+     <strong>“Crisis de mobilitat”</strong>. Els pagesos reclamen subvencions que no han estat pagades des de fa anys.<br><br>
+
+    Anuncis de la loteria de Nadal i d’Airbnb.<br><br>
+
+    La vaga d’educadors continua. La sobreproducció d’oli d’oliva aquest any a Andalusia fa que el 
+    govern espanyol obligui als agricultors de <strong> tot el país</strong> a emmagatzemar un 15% de la seva collita 
+    <strong>perquè els preus no baixin</strong>. Molts no s’ho poden permetre i venen a preu baix a l’estranger. La vaga de metges continua, 
+    carreteres tallades. <strong>“Crisis de mobilitat”</strong>. La vaga del dia 11, convocada pel PSOE 
+    (i els sindicats que li ballen l’aigua a qui estigui a la cadira grossa) ja ha estat rebutjada per
+     varis grups de treballadors. Trencament entre els sindicats.<br> <br>
+
+    Més anuncis d’El Corte Inglés i Securitas.</em><br><br><br>
+    Els nostres mitjans de comunicació (i aquí incloc sens dubte les xarxes socials) 
+    estan <strong>instrumentalitzats per despullar qualsevol tema del context necessari per aplicar-hi el sentit crític</strong>.
+     La barreja d’estímuls desconnectats fa que accedeixis a un milió de dades i tot i això <strong>no tinguis ni idea
+      de què està passant</strong>. I, enmig d’aquest desconcert, <em>t’intento vendre un suplement i un cotxe elèctric.</em><br><br>
+      Penso en la crisi de Ceuta d’aquest any i el conte xinès de la televisió de <strong> màfies de tràfic de persones</strong>.
+       Penso en com dies abans de la vaga de l’11 de novembre, ja es preparaven el terreny mostrant <strong> manifestacions
+        a França</strong> com a “bandes d’encaputxats que fan destrosses i disturbis sense provocació” i <strong> amables estudiants
+         pacífics</strong> atemorits a una banda. 
+         <br><br>Et dic “<strong>Crisis de mobilitat</strong>”, “<strong>Crisis migratòria</strong>” o la paraula comodí de turno, perquè la teva ment
+          no sigui capaç de dir “<strong>Crisis de classes</strong>”<br><hr><br></p>
+    <p><h2><strong>La representació de qualsevol violència com a barbàrie</strong></h2><br><br>
+          La dualitat que t’intenten gravar a foc sempre és la mateixa: <srtong>existeixen els bons, els democràtics</srtong>, 
+          els del lliri a la mà que aconsegueixen millorar la seva realitat amb poemes i vagues de fam, els que tot 
+          ho fan posant l’altra galta.<br><br>
+
+I després els dolents,<strong> els violents</strong>, els que cremen contenidors i llancen de tornada 
+les bombes de gas lacrimogen, <strong>els terroristes</strong> que foten la <em>nostra preciosa acció pacífica tèbia</em> a la brossa i ens 
+fragmenten, eviten la solidificació dels nostres solemnes objectius de superioritat moral liberal-europea.<br><br>
+
+Entorpeixen la suposada acció popular que arriba al parlament i que<strong><em> sempre, absolutament sempre</em></strong> ens ajuda
+ a totes i <strong><em>canvia la vida de la població a millor</em></strong>. Aquesta acció popular que <strong>ni tu ni jo hem vist</strong> aconseguir res
+  en la nostra vida.<br><br>
+
+Si aconsegueixen que tu, que et consideres una persona honrada i raonable, <strong>equiparis qualsevol acció no-pacífica
+ amb la barbàrie</strong>, la manera equivocada de procedir, amb una impulsivitat primal que no soluciona res, que no pot
+  estar organitzada ni calculada i ens acaba perjudicant a tots, si aconsegueixen que ho vegis així, <strong>els demanaràs 
+  perdó mentre t’apallissen per reclamar un sou mínim</strong> decent. <br>La violència només és ètica si és amb una porra 
+  i bales de goma.<br><br>
+  Miraràs als ulls a <strong>la vertadera barbàrie</strong> i sabràs que te l’han colat doblegada.<br><br>
+
+Dia rere dia la seva violència anirà augmentant, i nosaltres amb el lliri a la mà, tancats en una gàbia
+ i <strong>cagant-nos de por</strong>. Han aconseguit que ens faci més por agafar el bou per les banyes i salvar la vida
+  que ser envestits per una bèstia indescriptible.<strong> Por d’aplicar una autodefensa</strong> adient mentre ens maten a hòsties.<br>
+   Por a la llei i la policia mentre ens deixen dormint al carrer.<br><br>
+
+I haurien de ser ells els espantats.<br><br><br><br>
+
+S’han assegurat que oblidem a les <strong>sufragistes cremant fàbriques</strong> per aconseguir el dret a vot.
+ Les protestes de treballadors on <strong>destruïen les màquines de la patronal</strong> assassina per dos cèntims més l’hora.<br>
+  La vaga del 1919, <em>La Canadenca</em>, <strong>40 dies d’una Barcelona sense electricitat i burgesos atemorits</strong> que ens va donar
+   la jornada de 8h de la que gaudim avui. S’asseguren que no t’adonis que Gandhi va endarrerir la independència
+    de la Índia amb el seu moviment pacífic.<br><br>
+
+S’asseguren que tinguis por. Que et pensis que ets impotent.<br><br>
+Digues-me un sol dret aconseguit pels treballadors de forma pacífica. Digues-me un de sol <strong>mentre descartes
+ tots els que han estat aconseguits a la força</strong>. Perquè el capital mai ens donarà el que reclamem si ho pot evitar.
+  És estúpidament fàcil ignorar pancartes i càntics un dia l’any quan fas milers d’euros l’hora. <br>No ho és tant quan
+   la cadena de producció que els omple les butxaques deixa d’obeir.<br><br>
+
+   Jo estic farta del pensament insípid, <strong>desconnectat de la realitat</strong> i còmode de l’Europa del s. XXI.
+    Veig, en la insistència d’un moviment pacífic, la propaganda imperialista de “<em>portar la democràcia</em>” 
+    a països casualment tenidors de petroli. Veig unes condicions materials que algú altre va guanyar a sang
+     i suor per nosaltres, mentre en recordem només els eslògans i no les accions revolucionàries trencadores.<br><br>
+
+    <strong>Veig en el pacifisme indiscriminat la podridura de les democràcies occidentals xarrupa-mamelles
+       de la teta del capital internacional imperial.</strong><br><br>
+
+       Només ells poden ser violents. Poden sabotejar manifestacions pacífiques amb infiltracions, 
+       violència caòtica, apallissar manifestants mentre els companys Mossos <strong>fan veure que són civils</strong>. 
+       Igual que han fet des del final de la dictadura: <strong>infiltrar el moviment obrer per tacar-ne la imatge,
+        crear conflicte, passar els vídeos per televisió nacional</strong> assenyalant com d’<em>inhumans</em> són els protestants.<br><br><br>
+        
+        <br>“<strong><em>¡La violencia nunca es la solución!</em></strong>”, em diuen a Telecinco, excepte quan l’utilitzes a favor de la patronal,
+         quan l’exerceixen <strong>els gossos de la nació assedegats de sang</strong>. <br>Els mateixos que van amb la cara tapada
+          i a la butxaca duen la placa i l’àguila negra. <br><br><br>
+        “<strong><em>¡La violencia nunca es la solución!</em></strong>”, m’escupen a la cara des dels seus platós de televisió i 
+        oficines de redacció de premsa, des del seu cotxe amb xòfer personal i el seu gabinet d’advocats a Passeig 
+        de Gràcia.<br><br><br><br>
+        I, mentre ens intentem organitzar per evitar que facin fora a les nostres àvies dels seus pisos,
+         ens agafem de braços i mans a les companyes esperant ser arrancades del terra per senyors amb porres
+          i pistoles, ens llancem a l’asfalt i ens tapem el cap mentre ens apallissen i<strong> pensem que d’aquesta no
+           en sortim vives</strong>, ens indignem quan ens treuen els documents d’identitat i ens fan xantatges
+            per aconseguir informació. <br>Quan li treuen la beca universitària a la companya. Quan torna a pujar
+             el preu de la llum. <br><br>
+             Davant d’aquest infern han aconseguit que nosaltres també cantem “<strong><em>¡La violencia nunca es la solución!</em></strong>”.<br><br>
+            Per desgràcia, el tema no és si la violència és ètica o no.<br>
+            El tema és:<strong> què fem quan estem patim violència sistemàtica?</strong> I a mi no em veureu penjar-me
+             un collaret amb el símbol de la pau i dient de votar un cop cada quatre anys.
+             <br><br> 12/11/2026
+      </p>
+
+
+    </div id="article2">  <br> <br>
+      
+    <div id="article3">
+
+      <p id="subject3"><strong>Article en procés</strong><br>Estiguin atentes! Tonto el último!</p>
+
+    </div id="article3"> <br> <br>
+
+    </section>
+
+    <section class="images">
+      <figure id="div1">
+        <img src="images/Autorretrat.jpg" alt="Soc jo">
+        <figcaption>
+          circa 2022<br>
+          Done from the reflection of my balcony window in my old apartment in Barcelona<br>
+          Fet del reflexe de la finestra del balcó del meu antic pis a Barcelona
+        </figcaption>
+      </figure>
+
+      <figure id="div2">
+        <img src="images/autorretrat2.jpg" alt="Second self-portrait">
+        <figcaption>
+          2025<br>
+          Self-portrait duo, one drawn from memory and the other with a fixed mirror<br>
+          Duo d'autorretrats, un fet de memòria i el segon davant un mirall
+        </figcaption>
+      </figure>
+
+      <figure id="div3">
+        <img src="images/autorretrat3.jpg" alt="Soc jo un altre cop">
+        <figcaption>2025<br>From memory<br>Memòria</figcaption>
+      </figure>
+
+      <figure id="div4">
+        <img src="images/autorretrat4.jpg" alt="Soc jo un altre cop">
+        <figcaption>2024</figcaption>
+      </figure>
+
+      <figure id="div5">
+        <img src="images/autorretrat5.jpeg" alt="Soc jo un altre cop">
+        <figcaption>
+          This one is from October 2026. I think it's quite funny<br>
+          Aquest és d'octubre 2026. Em fa bastanta gràcia
+        </figcaption>
+      </figure>
+
+      <figure id="div6">
+        <img src="images/autorretrat6.jpeg" alt="Soc jo un altre cop">
+        <figcaption>
+          2024 <br>Dip pen and ink<br>Pluma i tinta
+        </figcaption>
+      </figure>
+
+      <figure id="div7">
+        <img src="images/autorretrat8.jpeg" alt="Soc jo un altre cop">
+        <figcaption>
+          2026 <br> Caption from this one reads "I wonder how people do it"<br>Dip pen and ink<br> El peu del dibuix diu "Com ho deu fer la gent?"<br>Pluma i tinta
+        </figcaption>
+      </figure>
+
+      <figure id="div8">
+        <img src="images/autorretrat7.jpeg" alt="Soc jo un altre cop">
+        <figcaption>
+          2024<br>
+          This one is just how  I like my sandwiches. It reads "Damm" "So good mate"<br> Així em molen els entrepans
+        </figcaption>
+      </figure>
+
+
+
+
+
+    </section>
+  </div>
+</body>
+</html>
